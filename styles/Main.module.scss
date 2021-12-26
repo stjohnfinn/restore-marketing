@@ -1,0 +1,31 @@
+.header {
+    display: grid;
+    grid-template-columns: 1fr 6fr 1fr 1fr 1.5fr 0.5fr;
+    justify-items: center;
+    align-items: center;
+    height: 100px;
+    background-color: #434343;
+    color: #fff5dc;
+
+    h1 {
+        font-family: 'Rubik';
+        justify-self: left;
+        font-size: 4rem;
+        margin: 0;
+        padding: 0;
+        letter-spacing: 0.5rem;
+    }
+
+    a {
+        font-family: 'Inter';
+        font-size: 1rem;
+    }
+}
+
+.signin {
+    border-radius: 10px;
+    border: 2px solid #fff5dc;
+    padding: 0.8rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}

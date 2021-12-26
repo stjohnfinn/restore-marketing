@@ -1,7 +1,7 @@
-import '../styles/globals.css'
+import '../styles/globals.css';
 
-function MyApp({ Component, pageProps }) {
+function Restore({ Component, pageProps }) {
   return <Component {...pageProps} />
 }
 
-export default MyApp
+export default Restore;
