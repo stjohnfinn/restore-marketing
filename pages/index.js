@@ -3,6 +3,7 @@ import 'React';
 import Link from 'next/link';
 import styling from '../styles/Main.module.css';
 import Image from 'next/image';
+import Header from './components/Header';
 
 function Home() {
     return (
@@ -12,24 +13,9 @@ function Home() {
                 <link rel="preconnect" href={"https://fonts.googleapis.com"}></link>
                 <link rel="preconnect" href={"https://fonts.gstatic.com"} crossorigin></link>
                 <link href={"https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=Inter&family=Rubik&display=swap"} rel="stylesheet"></link>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
             </Head>
-            <div className={styling.header}>
-                <Link href='./' >
-                    <Image 
-                        src='/images/leaf_logo_yellow.svg'
-                        height={60}
-                        width={60}
-                        alt='leaf-logo'
-                        className={styling.headerLogo}
-                    />
-                </Link>
-                <h1>RESTORE</h1>
-                <div className={styling.headerLinks}>
-                    <Link href='/About'><a>About</a></Link>
-                    <Link href='/Contact'><a>Contact</a></Link>
-                    <Link href='/Register'><a className={styling.signin}>Sign In / Register</a></Link>
-                </div>
-            </div>
+            <Header />
         </div>
     )
 }

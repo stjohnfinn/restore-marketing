@@ -1,43 +1,156 @@
 .header {
   display: grid;
-  grid-template-columns: 90px 6fr 3fr 0.25fr;
+  position: fixed;
+  width: 100%;
+  grid-template-columns: 70px 6fr 3fr 30px;
   justify-items: center;
   align-items: center;
-  height: 90px;
+  height: 70px;
   background-color: #434343;
   color: #fff5dc;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
 }
 .header h1 {
   font-family: "Rubik";
   justify-self: left;
-  font-size: 3.5rem;
+  font-size: 2rem;
   margin: 0;
   padding: 0;
+  font-weight: 100;
   letter-spacing: 0.5rem;
-  font-weight: 400;
 }
 .header a {
   font-family: "Inter";
-  font-size: 1rem;
+  transition: 0.2s all;
 }
 .header .headerLogo {
   cursor: pointer;
 }
-.header .signin {
-  border-radius: 10px;
-  border: 2px solid #fff5dc;
-  padding: 0.8rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  font-weight: bold;
-  letter-spacing: 0.5px;
-}
 .header .headerLinks {
-  width: 100%;
+  width: 400px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+}
+.header .headerLinksCont {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+.header .miniMenu {
+  height: 32px;
+  width: 35px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.header .miniMenu .threeBarMenuActive {
+  width: 0;
+  position: relative;
+}
+.header .miniMenu .threeBarMenuActive::after {
+  transform: rotate(45deg);
+}
+.header .miniMenu .threeBarMenuActive::before {
+  transform: rotate(-45deg);
+}
+.header .miniMenu .threeBarMenuInactive {
+  width: 35px;
+}
+.header .miniMenu .threeBarMenuInactive::after {
+  transform: translateY(-15px) rotate(0deg);
+}
+.header .miniMenu .threeBarMenuInactive::before {
+  transform: translateY(15px) rotate(0deg);
+}
+.header .miniMenu .threeBarMenu {
+  background-color: #fff5dc;
+  height: 2px;
+  position: relative;
+  transition: 0.2s all;
+  transform-origin: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+.header .miniMenu .threeBarMenu::after {
+  content: "";
+  display: block;
+  background-color: #fff5dc;
+  height: 2px;
+  width: 35px;
+  border-radius: 10px;
+  position: absolute;
+  transition: 0.2s all;
+}
+.header .miniMenu .threeBarMenu::before {
+  content: "";
+  display: block;
+  background-color: #fff5dc;
+  height: 2px;
+  width: 35px;
+  border-radius: 10px;
+  position: absolute;
+  transition: 0.2s all;
+}
+.header .expandMenuActive {
+  transform: translateX(100%);
+}
+.header .expandMenu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #434343;
+  width: min(600px, 100%);
+  min-height: calc(100vh - 70px);
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  transition: 0.2s all;
+}
+.header .expandMenu div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.header .expandMenu a {
+  margin: 15px;
+  margin-left: 30px;
+  font-size: 3rem;
+  text-align: left;
+  position: relative;
+}
+.header .expandMenu a::before {
+  content: "";
+  background-color: #fff5dc;
+  display: block;
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  top: 100%;
+  right: 0;
+  inset: 0 0 0 0;
+  height: 3px;
+  transition: 0.2s all ease;
+  transform: scaleX(0);
+  transform-origin: right;
+}
+.header .expandMenu a:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+.header .expandMenu .signin {
+  margin-bottom: 30px;
 }
 
 /*# sourceMappingURL=Main.module.css.map */
