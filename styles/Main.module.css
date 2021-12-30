@@ -115,7 +115,7 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  transition: 0.2s all;
+  transition: 0.2s all ease;
 }
 .header .expandMenu div {
   display: flex;
@@ -135,12 +135,10 @@
   background-color: #fff5dc;
   display: block;
   position: absolute;
-  bottom: 100%;
-  left: 0;
-  top: 100%;
+  top: 0;
   right: 0;
-  inset: 0 0 0 0;
-  height: 3px;
+  bottom: 0;
+  left: 0;
   transition: 0.2s all ease;
   transform: scaleX(0);
   transform-origin: right;
