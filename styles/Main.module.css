@@ -261,12 +261,52 @@
   clip-path: polygon(0 0, 100% 10vw, 100% 100%, 0 100%);
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
+}
+.body .content {
+  width: min(90%, 1000px);
+  padding: 20px;
+}
+.body .content h1 {
+  text-align: left;
+  padding: 25px;
+  font-size: 3rem;
+  letter-spacing: 0.2rem;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.body .ctaSectionContentContainer {
+  display: flex;
+  flex-direction: row;
 }
 .body .ctaSectionTitle {
   color: #fff5dc;
   font-family: "Inter";
   font-weight: bold;
+  border-left: 2px solid #fff5dc;
+}
+.body .ctaSectionContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.body .ctaSectionContent div {
+  flex-direction: column;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  padding-bottom: 4rem;
+  width: min(100%, 600px);
+}
+.body .ctaSectionContent div p {
+  text-align: left;
+  color: #fff5dc;
+  font-family: "IBM Plex Sans";
+  padding: 0;
+  line-height: 1.8;
+  font-size: 1rem;
 }
 
 /*# sourceMappingURL=Main.module.css.map */
