@@ -22,7 +22,6 @@
 
     a {
         font-family: 'Inter';
-        transition: 0.2s all;
     }
 
     .headerLogo {
@@ -68,7 +67,7 @@
         }
 
         .threeBarMenuInactive {
-            width: 35px;
+            width: 25px;
             
             &::after {
                 transform: translateY(-15px) rotate(0deg);
@@ -132,6 +131,7 @@
         align-items: flex-start;
         justify-content: space-between;
         transition: 0.2s all ease;
+        border-top: 1px solid gray;
 
         div {
             display: flex;
@@ -146,28 +146,166 @@
             font-size: 3rem;
             text-align: left;
             position: relative;
+            z-index: 1;
+            transition: 0.2s all;
 
-            &::before {
-                content: '';
-                background-color: #fff5dc;
-                display: block;
-                position: absolute;
+            &:hover {
+                transform: translateX(10px);
 
-                top: 0; right: 0; bottom: 0; left: 0;
-                
-                transition: 0.2s all ease;
-                transform: scaleX(0);
-                transform-origin: right;
+                &::after {
+                    transform: rotate(45deg);
+                    opacity: 1;
+                }
             }
 
-            &:hover::before {
-                transform: scaleX(1);
-                transform-origin: left;
+            &::after {
+                transition: 0.2s all ease;
+                content: '';
+                left: calc(100% + 15px);
+                top: calc(60% - 10px);
+                width: 10px;
+                height: 10px;
+                background-image: url('./images/arrow.svg');
+                position: absolute;
+                display: block;
+                transform: rotate(45deg);
+                opacity: 0;
             }
         }
 
         .signin {
             margin-bottom: 30px;
         }
+    }
+}
+
+.body {
+    position: absolute;
+    top: 70px;
+    width: 100%;
+    z-index: -1;
+    text-align: right;
+
+    .bodyText {
+        font-family: 'IBM Plex Sans';
+        color: black;
+        font-size: 1.1rem;
+        padding: 20px;
+    }
+
+    .ctaButton {
+        padding: 3rem;
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #424242;
+        color: #fff5dc;
+        border-radius: 7px;
+        font-size: 2rem;
+        font-family: 'IBM Plex Sans';
+        font-weight: bold;
+        transition: 0.2s all ease;
+
+        &:hover {
+            background-color: #292929;
+        }
+    }
+
+    .titlePage {
+        height: 800px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @media screen and (max-width: 1000px) {
+            flex-direction: column;
+        }
+
+        .titlePageTextCont {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: space-between;
+            text-align: right;
+
+            height: 400px;
+
+            @media screen and (max-width: 1000px) {
+                align-items: center;
+                text-align: center;
+                padding-bottom: 30px;
+            }
+
+            .titlePageTextContInner {
+                margin-top: 40px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                justify-content: center;
+
+                p {
+                    font-family: 'Rubik';
+                    margin: 5px;
+                    letter-spacing: 0.15rem;
+                    width: 100%;
+                    padding: 20px;
+
+                    margin-top: 0; margin-bottom: 0;
+                    padding-top: 0; padding-bottom: 0;
+                }
+        
+                .titleSecondary {
+                    font-size: 2rem;
+                }
+
+                .titlePrimary {
+                    font-size: 2.5rem;
+                    font-weight: bold;
+                    color: #195f0e;
+                }
+            }
+        }
+    }
+
+    .communityOuterCont {
+        background-color: #88ce7d;
+        height: calc(1200px + 10vw);
+        clip-path: polygon(0 0, 100% 10vw, 100% 100%, 0 100%);
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+
+    .communityInnerCont {
+        background-color: #469838;
+        height: calc(1200px + 5vw);
+        clip-path: polygon(0 0, 100% 10vw, 100% 100%, 0 100%);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+
+    .community {
+        height: 1200px;
+        background-color: #195f0e;
+
+        clip-path: polygon(0 0, 100% 10vw, 100% 100%, 0 100%);
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .ctaSectionTitle {
+        color: #fff5dc;
+        font-family: 'Inter';
+        font-weight: bold;
+    }
+
+    .ctaSectionContent {
+
     }
 }

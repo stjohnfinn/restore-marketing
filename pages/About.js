@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import Head from 'next/head';
-import styles from '../styles/Main.module.css';
+import styling from '../styles/Main.module.css';
+import Header from './components/Header';
 
 function About() {
     return (
@@ -9,8 +10,9 @@ function About() {
             <Head>
                 <title>Restore</title>
             </Head>
+            <Header />
             <h1>About Us</h1>
-            <p className={styles.header}>some information</p>
+            <p className={styling.header}>some information</p>
             <h3><Link href='./'><a>Home</a></Link></h3>
             <Image
                 src='/images/snoop.jpg'

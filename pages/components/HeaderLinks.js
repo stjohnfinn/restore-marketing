@@ -23,7 +23,7 @@ function HeaderLinks() {
                     <Link href='./About' ><a>About</a></Link>
                     <Link href='./Contact' ><a>Contact</a></Link>
                     <Link href='./Donate' ><a>Donate</a></Link>
-                    <Link href='./Join Our Team' ><a>Join Our Team</a></Link>
+                    <Link href='./JoinOurTeam' ><a>Join Our Team</a></Link>
                 </div>
                 <Link href='./SignIn'><a className={styling.signin}>Sign In / Register</a></Link>
             </div>
