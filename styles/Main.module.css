@@ -164,7 +164,7 @@
   text-align: right;
 }
 .body .bodyText {
-  font-family: "IBM Plex Sans";
+  font-family: "Archivo";
   color: black;
   font-size: 1.1rem;
   padding: 20px;
@@ -173,6 +173,7 @@
   padding: 3rem;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
+  margin: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -183,6 +184,12 @@
   font-family: "IBM Plex Sans";
   font-weight: bold;
   transition: 0.2s all ease;
+  text-align: center;
+}
+@media screen and (max-width: 1000px) {
+  .body .ctaButton {
+    margin-bottom: 20px;
+  }
 }
 .body .ctaButton:hover {
   background-color: #292929;
@@ -204,7 +211,7 @@
   align-items: flex-end;
   justify-content: space-between;
   text-align: right;
-  height: 400px;
+  height: 450px;
 }
 @media screen and (max-width: 1000px) {
   .body .titlePage .titlePageTextCont {
@@ -241,16 +248,16 @@
 }
 .body .communityOuterCont {
   background-color: #88ce7d;
-  height: calc(1200px + 10vw);
-  clip-path: polygon(0 0, 100% 10vw, 100% 100%, 0 100%);
+  height: calc(1200px + 7.5vw);
+  clip-path: polygon(0 0, 100% 7.5vw, 100% 100%, 0 100%);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
 }
 .body .communityInnerCont {
   background-color: #469838;
-  height: calc(1200px + 5vw);
-  clip-path: polygon(0 0, 100% 10vw, 100% 100%, 0 100%);
+  height: calc(1200px + 3.75vw);
+  clip-path: polygon(0 0, 100% 7.5vw, 100% 100%, 0 100%);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -258,20 +265,28 @@
 .body .community {
   height: 1200px;
   background-color: #195f0e;
-  clip-path: polygon(0 0, 100% 10vw, 100% 100%, 0 100%);
+  clip-path: polygon(0 0, 100% 7.5vw, 100% 100%, 0 100%);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+.body .community .ctaButton {
+  margin: 0;
+}
 .body .content {
-  width: min(90%, 1000px);
+  width: min(90%, 1200px);
   padding: 20px;
+}
+@media screen and (max-width: 1000px) {
+  .body .content {
+    margin-top: 4rem;
+  }
 }
 .body .content h1 {
   text-align: left;
   padding: 25px;
-  font-size: 3rem;
+  font-size: min(3rem, 8vw);
   letter-spacing: 0.2rem;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -279,6 +294,13 @@
 .body .ctaSectionContentContainer {
   display: flex;
   flex-direction: row;
+  height: 450px;
+}
+@media screen and (max-width: 1000px) {
+  .body .ctaSectionContentContainer {
+    flex-direction: column;
+    height: 1000px;
+  }
 }
 .body .ctaSectionTitle {
   color: #fff5dc;
@@ -289,8 +311,18 @@
 .body .ctaSectionContent {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: flex-start;
+  width: min(95%, 600px);
+}
+@media screen and (max-width: 1000px) {
+  .body .ctaSectionContent {
+    align-items: center;
+  }
+}
+.body .ctaSectionContent strong {
+  color: #1c1c1c;
+  font-weight: bold;
 }
 .body .ctaSectionContent div {
   flex-direction: column;
@@ -298,15 +330,138 @@
   align-items: flex-start;
   justify-content: space-evenly;
   padding-bottom: 4rem;
-  width: min(100%, 600px);
+  width: min(100%, 500px);
 }
 .body .ctaSectionContent div p {
   text-align: left;
   color: #fff5dc;
-  font-family: "IBM Plex Sans";
+  font-family: "Archivo";
   padding: 0;
   line-height: 1.8;
   font-size: 1rem;
+}
+.body .accountableOuterCont {
+  background-color: #a57f4a;
+  height: calc(1300px + 7.5vw);
+  clip-path: polygon(0 0, 100% 7.5vw, 100% 100%, 0 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transform: translateY(-7.5vw);
+}
+.body .accountableInnerCont {
+  background-color: #916b36;
+  height: calc(1300px + 3.75vw);
+  clip-path: polygon(0 0, 100% 7.5vw, 100% 100%, 0 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.body .accountable {
+  background-color: #7d5722;
+  clip-path: polygon(0 0, 100% 7.5vw, 100% 100%, 0 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 1300px;
+}
+@media screen and (min-width: 1000px) {
+  .body .accountable .ctaSectionContentContainer {
+    align-items: center;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .body .accountable .ctaButton {
+    margin: 0;
+  }
+}
+.body .educatedOuterCont {
+  background-color: #9cc6f5;
+  height: calc(1200px + 7.5vw);
+  clip-path: polygon(0 0, 100% 7.5vw, 100% 100%, 0 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transform: translateY(-15vw);
+}
+.body .educatedInnerCont {
+  background-color: #92bceb;
+  height: calc(1200px + 3.75vw);
+  clip-path: polygon(0 0, 100% 7.5vw, 100% 100%, 0 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.body .educated {
+  background-color: #88b2e1;
+  clip-path: polygon(0 0, 100% 7.5vw, 100% 100%, 0 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 1200px;
+}
+@media screen and (min-width: 1000px) {
+  .body .educated .ctaButton {
+    margin: 0;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .body .educated .ctaSectionContentContainer {
+    align-items: center;
+  }
+}
+.body .missionOuterCont {
+  background-color: #bcc4cc;
+  height: calc(1200px + 7.5vw);
+  clip-path: polygon(0 0, 100% 7.5vw, 100% 100%, 0 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transform: translateY(-22.5vw);
+}
+.body .missionInnerCont {
+  background-color: #a8b0b8;
+  height: calc(1200px + 3.75vw);
+  clip-path: polygon(0 0, 100% 7.5vw, 100% 100%, 0 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.body .mission {
+  background-color: #949ca4;
+  clip-path: polygon(0 0, 100% 7.5vw, 100% 100%, 0 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 1200px;
+}
+@media screen and (min-width: 1000px) {
+  .body .mission .ctaButton {
+    margin: 0;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .body .mission .ctaSectionContentContainer {
+    align-items: center;
+  }
+}
+.body .mission .finalCTA {
+  height: 300px;
+  width: min(900px, 90%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.body .mission .finalCTA h2 {
+  color: #fff5dc;
+  font-size: 3rem;
+  font-family: "Rubik";
+  font-weight: bold;
+  text-align: center;
 }
 
 /*# sourceMappingURL=Main.module.css.map */
