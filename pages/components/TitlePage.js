@@ -23,10 +23,8 @@ function TitlePage() {
                 <p className={styling.bodyText}>Reduce your climate impact and make a difference, <strong>together</strong>.</p>
                 <Link href='./SignIn' ><a className={styling.ctaButton}>Join Now</a></Link>
             </div>
-            <Image
+            <img
                 src='/images/community.svg'
-                height={600}
-                width={900}
                 className={styling.communityImage}
             />
         </div>

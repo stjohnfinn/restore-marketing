@@ -8,7 +8,8 @@
     height: 70px;
     background-color: #434343;
     color: #fff5dc;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.5);
 
     h1 {
         font-family: 'Rubik';
@@ -132,12 +133,17 @@
         justify-content: space-between;
         transition: 0.2s all ease;
         border-top: 1px solid gray;
+        box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.5);
 
         div {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
             justify-content: center;
+
+            &:hover {
+                color: rgba(255, 245, 220, 0.5);
+            }
         }
 
         a {
@@ -150,26 +156,8 @@
             transition: 0.2s all;
 
             &:hover {
-                transform: translateX(10px);
-
-                &::after {
-                    transform: rotate(45deg);
-                    opacity: 1;
-                }
-            }
-
-            &::after {
-                transition: 0.2s all ease;
-                content: '';
-                left: calc(100% + 15px);
-                top: calc(60% - 10px);
-                width: 10px;
-                height: 10px;
-                background-image: url('./images/arrow.svg');
-                position: absolute;
-                display: block;
-                transform: rotate(45deg);
-                opacity: 0;
+                color: #fff5dc;
+                transform: translateX(15px);
             }
         }
 
@@ -186,11 +174,22 @@
     z-index: -1;
     text-align: right;
 
+    .mission, .community, .accountable, .educated {
+        
+        @media screen and (max-width: 1000px) {
+            div {
+                align-items: center;
+            }
+            height: unset;
+        }
+    }
+
     .bodyText {
         font-family: 'Archivo';
         color: black;
         font-size: 1.1rem;
         padding: 20px;
+        line-height: 1.5;
     }
 
     .ctaButton {
@@ -229,6 +228,20 @@
             flex-direction: column;
         }
 
+        img {
+            width: min(700px, 80vw);
+            opacity: 0;
+            transform: translateY(5%);
+            animation: imageAppear 0.5s ease-in-out forwards;
+        }
+
+        @keyframes imageAppear {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         .titlePageTextCont {
             display: flex;
             flex-direction: column;
@@ -264,47 +277,74 @@
         
                 .titleSecondary {
                     font-size: 2rem;
+                    overflow: hidden;
+                    position: relative;
+                    
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        inset: 0;
+                        background-color: #fff5dc;
+                        transition: 0.3s all;
+                        opacity: 1;
+                        animation: appear 0.5s ease-in-out forwards;
+                    }
                 }
 
                 .titlePrimary {
                     font-size: 2.5rem;
                     font-weight: bold;
                     color: #195f0e;
+                    position: relative;
+                    overflow: hidden;
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        inset: 0;
+                        background-color: #fff5dc;
+                        transition: 0.3s all;
+                        opacity: 1;
+                        animation: appear 0.5s ease-in-out forwards;
+                    }
+                }
+
+                @keyframes appear {
+                    to {
+                        opacity: 0.1;
+                        transform: translateX(100%);
+                    }
                 }
             }
         }
     }
 
-    .communityOuterCont {
-        background-color: #88ce7d;
-        height: calc(1200px + 7.5vw);
-        clip-path: polygon(0 0, 100% 7.5vw, 100% 100%, 0 100%);
-
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-    }
-
-    .communityInnerCont {
-        background-color: #469838;
-        height: calc(1200px + 3.75vw);
-        clip-path: polygon(0 0, 100% 7.5vw, 100% 100%, 0 100%);
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-    }
-
     .community {
-        height: 1200px;
+        height: 1000px;
         background-color: #195f0e;
-
-        clip-path: polygon(0 0, 100% 7.5vw, 100% 100%, 0 100%);
-
+    
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-
+        position: relative;
+    
+        .triOne {
+            background-color: #88b2e1;
+        }
+    
+        .triTwo {
+            background-color: #bcc4cc;
+        }
+    
+        .triThree {
+            background-color: #a8b0b8;
+        }
+        
+        .triFour {
+            background-color: #949ca4;
+        }
+    
         .ctaButton {
             margin: 0;
         }
@@ -313,11 +353,18 @@
     .content {
         width: min(90%, 1200px);
         padding: 20px;
-
+        height: min-content;
+    
         @media screen and (max-width: 1000px) {
-            margin-top: 4rem;
+            padding-top: 0;
+            margin-top: 0;
+            height: 100%;
         }
-
+    
+        img {
+            width: 400px;
+        }
+    
         h1 {
             text-align: left;
             padding: 25px;
@@ -335,7 +382,7 @@
 
         @media screen and (max-width: 1000px) {
             flex-direction: column;
-            height: 1000px;
+            height: 80%;
         }
     }
 
@@ -382,153 +429,142 @@
         }
     }
 
-    .accountableOuterCont {
-        background-color: #a57f4a;
-        height: calc(1300px + 7.5vw);
-        clip-path: polygon(0 0, 100% 7.5vw, 100% 100%, 0 100%);
-
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-
-        transform: translateY(-7.5vw);
-    }
-
-    .accountableInnerCont {
-        background-color: #916b36;
-        height: calc(1300px + 3.75vw);
-        clip-path: polygon(0 0, 100% 7.5vw, 100% 100%, 0 100%);
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-    }
-
     .accountable {
         background-color: #7d5722;
-        clip-path: polygon(0 0, 100% 7.5vw, 100% 100%, 0 100%);
-
+    
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-
-        height: 1300px;
-
+        position: relative;
+    
+        height: 1000px;
+    
+        .triOne {
+            background-color: #88b2e1;
+        }
+    
+        .triTwo {
+            background-color: #bcc4cc;
+        }
+    
+        .triThree {
+            background-color: #a8b0b8;
+        }
+        
+        .triFour {
+            background-color: #949ca4;
+        }
+    
         .ctaSectionContentContainer {
             
             @media screen and (min-width: 1000px) {
                 align-items: center;
             }
         }
-
+    
         .ctaButton {
             
             @media screen and (min-width: 1000px) {
                 margin: 0;
             }
         }
-    }
-
-    .educatedOuterCont {
-        background-color: #9cc6f5;
-        height: calc(1200px + 7.5vw);
-        clip-path: polygon(0 0, 100% 7.5vw, 100% 100%, 0 100%);
-
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-
-        transform: translateY(-15vw);
-    }
-
-    .educatedInnerCont {
-        background-color: #92bceb;
-        height: calc(1200px + 3.75vw);
-        clip-path: polygon(0 0, 100% 7.5vw, 100% 100%, 0 100%);
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
     }
 
     .educated {
         background-color: #88b2e1;
-        clip-path: polygon(0 0, 100% 7.5vw, 100% 100%, 0 100%);
-
+    
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-
-        height: 1200px;
-
+        position: relative;
+    
+        height: 1000px;
+    
+        @media screen and (max-width: 1000px) {
+            height: unset;
+        }
+    
+        .triOne {
+            background-color: #88b2e1;
+        }
+    
+        .triTwo {
+            background-color: #bcc4cc;
+        }
+    
+        .triThree {
+            background-color: #a8b0b8;
+        }
+        
+        .triFour {
+            background-color: #949ca4;
+        }
+    
         .ctaButton {
             
             @media screen and (min-width: 1000px) {
                 margin: 0;
             }
         }
-
+    
         .ctaSectionContentContainer {
             
             @media screen and (min-width: 1000px) {
                 align-items: center;
             }
         }
-    }
-
-    .missionOuterCont {
-        background-color: #bcc4cc;
-        height: calc(1200px + 7.5vw);
-        clip-path: polygon(0 0, 100% 7.5vw, 100% 100%, 0 100%);
-
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-
-        transform: translateY(-22.5vw);
-    }
-
-    .missionInnerCont {
-        background-color: #a8b0b8;
-        height: calc(1200px + 3.75vw);
-        clip-path: polygon(0 0, 100% 7.5vw, 100% 100%, 0 100%);
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
     }
 
     .mission {
         background-color: #949ca4;
-        clip-path: polygon(0 0, 100% 7.5vw, 100% 100%, 0 100%);
+        position: relative;
+
+        z-index: -1;
 
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
 
-        height: 1200px;
+        height: 1500px;
 
-        .ctaButton {
-            
-            @media screen and (min-width: 1000px) {
-                margin: 0;
-            }
+        @media screen and (max-width: 1000px) {
+            justify-content: center;
+            height: 1600px;
+            padding-bottom: 200px;
         }
 
         .ctaSectionContentContainer {
             
-            @media screen and (min-width: 1000px) {
+            @media screen and (max-width: 1000px) {
                 align-items: center;
+                justify-content: center;
+                height: min-content;
+            }
+        }
+
+        .ctaSectionContent {
+            flex-direction: row;
+            width: 100%;
+
+            @media screen and (max-width: 1000px) {
+                flex-direction: column;
             }
         }
 
         .finalCTA {
-            height: 300px;
             width: min(900px, 90%);
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: space-between;
+            padding-bottom: 10rem;
+
+            @media screen and (max-width: 1000px) {
+                padding-bottom: 0;
+            }
 
             h2 {
                 color: #fff5dc;
@@ -537,6 +573,188 @@
                 font-weight: bold;
                 text-align: center;
             }
+        }
+    }
+
+    .transitionCont {
+        height: min(400px, 20vw);
+        width: 100%;
+        position: relative;
+        transform: scale(1.05);
+        z-index: 2;
+        padding: 0 2rem;
+    
+        div {
+            position: absolute;
+            top: 0; left: 0; bottom: 0; right: 0;
+        }
+    
+        .tranStart {
+            // clip-path: polygon(0 1%, 100% 21%, 100% 0, 0 0);
+    
+            // clip-path: polygon(0 1%, 100% 31%, 100% 0, 0 0);
+    
+            clip-path: polygon(0 0, 100% 0, 100% 41%, 0 1%);
+        }
+    
+        .tranSecond {
+            // clip-path: polygon(0 0, 100% 20%, 100% 60%, 0 40%);
+    
+            // clip-path: polygon(0 0, 100% 30%, 100% 66%, 0 36%);
+    
+            clip-path: polygon(0 0, 100% 40%, 100% 71%, 0 31%);
+        }
+    
+        .tranThird {
+            // clip-path: polygon(0 39%, 100% 59%, 100% 100%, 0 80%);
+    
+            // clip-path: polygon(0 35%, 100% 68%, 100% 100%, 0 69%);
+    
+            clip-path: polygon(0 30%, 100% 70%, 100% 100%, 99% 100%, 0 61%, 0 60%);
+        }
+    
+        .tranEnd {
+            // clip-path: polygon(0 79%, 100% 99%, 100% 100%, 0% 100%);
+    
+            // clip-path: polygon(0 69%, 100% 99%, 100% 100%, 0 100%);
+    
+            clip-path: polygon(0 60%, 100% 100%, 0% 100%);
+        }
+    } 
+}
+
+.footer {
+    background-color: #fff5dc;
+    height: min-content;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 2;
+
+    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.15);
+
+    @media screen and (max-width: 1000px) {
+        height: 600px;
+    }
+
+    .footerInnerCont {
+        display: flex;
+        width: min(100%, 600px);
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        height: 100%;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+
+        @media screen and (max-width: 1000px) {
+            align-items: center;
+        }
+    }
+
+    .footerLinkMainCont {
+        width: min(100%, 600px);
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+        height: min-content;
+        
+        padding-bottom: 1rem;
+        padding-top: 1rem;
+
+        @media screen and (max-width: 1000px) {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        p, a {
+            font-family: 'Archivo';
+            text-align: center;
+            font-size: 1rem;
+            color: black;
+            margin: 0;
+        }
+
+        &:hover {
+            a {
+                color: #666666;
+            }
+        }
+    }
+
+    p, a {
+        font-family: 'Archivo';
+        text-align: center;
+        font-size: 1rem;
+        color: black;
+        margin: 0;
+    }
+
+    .footerTag {
+        color: black;
+
+        padding: 5px;
+
+        @media screen and (max-width: 1000px) {
+            align-items: center;
+        }
+    }
+
+    .footerCont {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 10px;
+        width: 100%;
+
+        @media screen and (max-width: 1000px) {
+            align-items: center;
+        }
+
+        h1 {
+            font-family: 'Inter';
+            margin: 0;
+            font-size: 1.2rem;
+            padding: 3px;
+            margin: 5px;
+            color: #434343;
+            font-weight: normal;
+        }
+
+        .footerLink {
+            margin: 5px;
+            padding: 3px;
+            position: relative;
+            z-index: 1;
+            font-size: 0.8rem;
+
+            &:hover {
+                color: black;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .footerTitle {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        padding: 5px;
+
+        h1 {
+            padding: 0;
+            margin: 0;
+            font-size: 2rem;
+            font-family: 'Rubik';
+            letter-spacing: 0.5rem;
+            padding-left: 10px;
+            color: #434343;
         }
     }
 }

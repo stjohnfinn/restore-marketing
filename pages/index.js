@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import 'React';
+import React from 'react';
 import Link from 'next/link';
 import styling from '../styles/Main.module.css';
 import Image from 'next/image';
@@ -9,6 +9,8 @@ import Community from './components/Community';
 import Accountable from './components/Accountable';
 import Educated from './components/Educated';
 import Mission from './components/Mission';
+import Transition from './components/Transition';
+import Footer from './components/Footer';
 
 function Home() {
     return (
@@ -25,10 +27,15 @@ function Home() {
                 <Header />
                 <div className={styling.body}>
                     <TitlePage />
+                    <Transition start={'#fff5dc'} one={'#88ce7d'} two={'#469838'} end={'#195F0E'} />
                     <Community />
+                    <Transition start={'#195F0E'} one={'#A57F4A'} two={'#916B36'} end={'#7D5722'} />
                     <Accountable />
+                    <Transition start={'#7D5722'} one={'#9CC6F5'} two={'#92BCEB'} end={'#88B2E1'} />
                     <Educated />
+                    <Transition start={'#88B2E1'} one={'#BCC4CC'} two={'#A8B0B8'} end={'#949CA4'} />
                     <Mission />
+                    <Footer />
                 </div>
             </div>
         </div>
