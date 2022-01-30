@@ -2,23 +2,23 @@
   display: grid;
   position: fixed;
   width: 100%;
-  grid-template-columns: 70px 6fr 3fr 30px;
+  grid-template-columns: 60px 6fr 3fr 30px;
   justify-items: center;
   align-items: center;
-  height: 70px;
+  height: 60px;
   background-color: #434343;
   color: #fff5dc;
   z-index: 2;
-  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
 }
 .header h1 {
-  font-family: "Rubik";
+  font-family: "Raleway";
   justify-self: left;
   font-size: 2rem;
   margin: 0;
   padding: 0;
   font-weight: 100;
-  letter-spacing: 0.5rem;
+  letter-spacing: 0.25rem;
 }
 .header a {
   font-family: "Inter";
@@ -108,7 +108,7 @@
   right: 0;
   background-color: #434343;
   width: min(600px, 100%);
-  min-height: calc(100vh - 70px);
+  min-height: calc(100vh - 60px);
   padding: 0;
   margin: 0;
   display: flex;
@@ -117,7 +117,7 @@
   justify-content: space-between;
   transition: 0.2s all ease;
   border-top: 1px solid gray;
-  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
 }
 .header .expandMenu div {
   display: flex;
@@ -190,7 +190,9 @@
   }
 }
 .body .ctaButton:hover {
-  background-color: #292929;
+  background-color: #383838;
+  filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.25));
+  transform: translateY(-5px);
 }
 .body .titlePage {
   height: 800px;
@@ -207,7 +209,7 @@
   width: min(700px, 80vw);
   opacity: 0;
   transform: translateY(5%);
-  animation: imageAppear 0.5s ease-in-out forwards;
+  animation: imageAppear 0.5s ease-out forwards;
 }
 @keyframes imageAppear {
   to {
@@ -238,7 +240,7 @@
   justify-content: center;
 }
 .body .titlePage .titlePageTextCont .titlePageTextContInner p {
-  font-family: "Rubik";
+  font-family: "Raleway";
   margin: 5px;
   letter-spacing: 0.15rem;
   width: 100%;
@@ -286,7 +288,7 @@
 }
 .body .community {
   height: 1000px;
-  background-color: #195f0e;
+  background-color: #27641e;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -309,7 +311,7 @@
   margin: 0;
 }
 .body .content {
-  width: min(90%, 1200px);
+  width: min(90%, 1100px);
   padding: 20px;
   height: min-content;
 }
@@ -317,11 +319,21 @@
   .body .content {
     padding-top: 0;
     margin-top: 0;
-    height: 100%;
+    padding-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
   }
-}
-.body .content img {
-  width: 400px;
+  .body .content h1 {
+    text-align: left;
+    width: 100%;
+    padding-bottom: 2rem;
+  }
+  .body .content .ctaSectionContentContainer {
+    padding: 2rem 0;
+    height: unset;
+  }
 }
 .body .content h1 {
   text-align: left;
@@ -330,17 +342,23 @@
   letter-spacing: 0.2rem;
   padding-top: 20px;
   padding-bottom: 20px;
+  margin: 0;
 }
 .body .ctaSectionContentContainer {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   height: 450px;
 }
 @media screen and (max-width: 1000px) {
   .body .ctaSectionContentContainer {
     flex-direction: column;
+    justify-content: space-between;
     height: 80%;
   }
+}
+.body .ctaSectionContentContainer img {
+  width: min(500px, 90vw);
 }
 .body .ctaSectionTitle {
   color: #fff5dc;
@@ -353,6 +371,7 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: flex-start;
+  height: 100%;
   width: min(95%, 600px);
 }
 @media screen and (max-width: 1000px) {
@@ -368,9 +387,13 @@
   flex-direction: column;
   display: flex;
   align-items: flex-start;
-  justify-content: space-evenly;
-  padding-bottom: 4rem;
+  padding-bottom: 2rem;
   width: min(100%, 500px);
+}
+@media screen and (max-width: 1000px) {
+  .body .ctaSectionContent div {
+    padding-bottom: 0;
+  }
 }
 .body .ctaSectionContent div p {
   text-align: left;
@@ -455,13 +478,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 1500px;
+  height: 1200px;
 }
 @media screen and (max-width: 1000px) {
   .body .mission {
     justify-content: center;
-    height: 1600px;
-    padding-bottom: 200px;
+    height: 1400px;
+    padding-bottom: 100px;
   }
 }
 @media screen and (max-width: 1000px) {
@@ -474,11 +497,15 @@
 .body .mission .ctaSectionContent {
   flex-direction: row;
   width: 100%;
+  justify-content: space-between;
 }
 @media screen and (max-width: 1000px) {
   .body .mission .ctaSectionContent {
     flex-direction: column;
   }
+}
+.body .mission .ctaSectionContent img {
+  width: 400px;
 }
 .body .mission .finalCTA {
   width: min(900px, 90%);
@@ -496,7 +523,7 @@
 .body .mission .finalCTA h2 {
   color: #fff5dc;
   font-size: 3rem;
-  font-family: "Rubik";
+  font-family: "Raleway";
   font-weight: bold;
   text-align: center;
 }
@@ -520,6 +547,7 @@
 }
 .body .transitionCont .tranSecond {
   clip-path: polygon(0 0, 100% 40%, 100% 71%, 0 31%);
+  filter: drop-shadow(0 0 10px 10px black);
 }
 .body .transitionCont .tranThird {
   clip-path: polygon(0 30%, 100% 70%, 100% 100%, 99% 100%, 0 61%, 0 60%);
@@ -539,7 +567,7 @@
 }
 @media screen and (max-width: 1000px) {
   .footer {
-    height: 600px;
+    height: unset;
   }
 }
 .footer .footerInnerCont {
@@ -580,9 +608,6 @@
   color: black;
   margin: 0;
 }
-.footer .footerLinkMainCont:hover a {
-  color: #666666;
-}
 .footer p, .footer a {
   font-family: "Archivo";
   text-align: center;
@@ -606,6 +631,9 @@
   align-items: flex-start;
   padding: 10px;
   width: 100%;
+}
+.footer .footerCont:hover a {
+  color: #666666;
 }
 @media screen and (max-width: 1000px) {
   .footer .footerCont {
@@ -643,8 +671,8 @@
   padding: 0;
   margin: 0;
   font-size: 2rem;
-  font-family: "Rubik";
-  letter-spacing: 0.5rem;
+  font-family: "Raleway";
+  letter-spacing: 0.25rem;
   padding-left: 10px;
   color: #434343;
 }

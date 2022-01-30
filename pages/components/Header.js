@@ -18,8 +18,8 @@ function Header() {
             <Link href='./' >
                 <Image 
                     src='/images/leaf_logo_yellow.svg'
-                    height={40}
-                    width={40}
+                    height={35}
+                    width={35}
                     alt='leaf-logo'
                     className={styling.headerLogo}
                 />
