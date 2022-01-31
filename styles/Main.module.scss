@@ -231,7 +231,6 @@
         text-align: center;
         transform-origin: center;
         opacity: 0;
-        transform: translateX(-50%);
         animation: ctaButtonAppear 0.5s 0.3s ease-out forwards;
 
         @media screen and (max-width: 1000px) {
@@ -247,13 +246,13 @@
 
     @keyframes ctaButtonAppear {
         to {
-            transform: translateX(0);
             opacity: 1;
         }
     }
 
     .titlePage {
         height: 800px;
+        min-height: 90vh;
         display: flex;
         justify-content: center;
         align-items: center;
