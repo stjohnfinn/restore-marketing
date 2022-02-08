@@ -5,9 +5,9 @@ function Accountable() {
     return (
         <div className={styling.accountable}>
             <div className={styling.content}>
-                <h1 className={styling.ctaSectionTitle}>HELD ACCOUNTABLE</h1>
+                <h1 className={styling.ctaSectionTitle} data-aos={'fade-up'}>HELD ACCOUNTABLE</h1>
                 <div className={styling.ctaSectionContentContainer}>
-                    <div className={styling.ctaSectionContent}>
+                    <div className={styling.ctaSectionContent} data-aos={'fade-up'}>
                         <div>
                             <p className={styling.bodyText}>Large corporations that rely on fossil fuels for manufacturing and transportation are responsible for much 
                             of the <strong>Climate Change</strong> happening today.</p>
@@ -19,6 +19,7 @@ function Accountable() {
                     </div>
                     <img
                         src={'/images/search.svg'}
+                        data-aos={'fade-up'}
                     />
                 </div>
             </div>

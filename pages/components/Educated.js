@@ -5,9 +5,9 @@ function Educated() {
     return (
         <div className={styling.educated}>
             <div className={styling.content}>
-                <h1 className={styling.ctaSectionTitle}>STAYING EDUCATED</h1>
+                <h1 className={styling.ctaSectionTitle} data-aos={'fade-up'}>STAYING EDUCATED</h1>
                 <div className={styling.ctaSectionContentContainer}>
-                    <div className={styling.ctaSectionContent}>
+                    <div className={styling.ctaSectionContent} data-aos={'fade-up'}>
                         <div>
                             <p className={styling.bodyText}>In today's agenda-driven news world, it's important to stay up to date with reliable resources.</p>
                             
@@ -18,6 +18,7 @@ function Educated() {
                     </div>
                     <img
                         src={'/images/learning.svg'}
+                        data-aos={'fade-up'}
                     />
                 </div>
             </div>

@@ -5,9 +5,9 @@ function Mission() {
     return (
         <div className={styling.mission}>
             <div className={styling.content}>
-                <h1 className={styling.ctaSectionTitle}>OUR MISSION</h1>
+                <h1 className={styling.ctaSectionTitle} data-aos={'fade-up'}>OUR MISSION</h1>
                 <div className={styling.ContentContainer}>
-                    <div className={styling.ctaSectionContent}>
+                    <div className={styling.ctaSectionContent} data-aos={'fade-up'}>
                         <div>
                             <p className={styling.bodyText}>Here at <strong>RESTORE</strong>, we want to create a more educated and more impact-conscious population, in order to reverse the damage and preserve the planet 
                             for future generations.</p>
@@ -22,7 +22,7 @@ function Mission() {
                     </div>
                 </div>
             </div>
-            <div className={styling.finalCTA}>
+            <div className={styling.finalCTA} data-aos={'fade-up'}>
                 <h2>Together, we can reverse the damage we've done.</h2>
                 <Link href='/signin' ><a className={styling.ctaButton}>Join Now</a></Link>
             </div>

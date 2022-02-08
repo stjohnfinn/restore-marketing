@@ -2,7 +2,7 @@ import Head from 'next/head';
 import styling from '../styles/Main.module.css';
 import Header from './components/Header';
 
-function About() {
+function Contact() {
     return (
         <div>
             <Head>
@@ -20,4 +20,4 @@ function About() {
     )
 }
 
-export default About;
+export default Contact;
