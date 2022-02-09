@@ -20,12 +20,12 @@ function HeaderLinks() {
             </div>
             <div className={expandStyle}>
                 <div>
-                    <Link href='./About' ><a>About</a></Link>
-                    <Link href='./Contact' ><a>Contact</a></Link>
-                    <Link href='./Donate' ><a>Donate</a></Link>
-                    <Link href='./JoinOurTeam' ><a>Join Our Team</a></Link>
+                    <Link href='/About' ><a>About</a></Link>
+                    <Link href='/Contact' ><a>Contact</a></Link>
+                    <Link href='/Donate' ><a>Donate</a></Link>
+                    <Link href='/JoinOurTeam' ><a>Join Our Team</a></Link>
                 </div>
-                <Link href='./SignIn'><a className={styling.signin}>Sign In / Register</a></Link>
+                <Link href='/SignIn'><a className={styling.signin}>Sign In / Register</a></Link>
             </div>
         </div>
     )

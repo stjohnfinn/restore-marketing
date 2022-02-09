@@ -4,14 +4,13 @@ import Header from './components/Header';
 
 function Donate() {
     return (
-        <div>
+        <div className={styling.donate} >
             <Head>
                 <title>Restore / Make a Difference</title>
                 <link rel="preconnect" href={"https://fonts.googleapis.com"}></link>
-                <link rel="preconnect" href={"https://fonts.gstatic.com"} crossorigin></link>
+                <link rel="preconnect" href={"https://fonts.gstatic.com"} crossOrigin></link>
                 <link href={"https://fonts.googleapis.com/css2?family=Archivo:wght@500&family=IBM+Plex+Sans&family=Inter:wght@450&family=Rubik&display=swap"} rel="stylesheet"></link>
                 <link href={"https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap"} rel="stylesheet"></link>
-                <link rel='stylesheet' href='./node_modules/aos/dis/aos.css' ></link>
                 <link rel='icon' href='./images/leaf_logo.png' />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
             </Head>
@@ -40,6 +39,7 @@ function Donate() {
                     <button>Credit Card</button>
                 </div>
             </div>
+            <img className={styling.restoreStripes} src={'./images/restore-stripes.svg'} />
         </div>
     )
 }

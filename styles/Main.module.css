@@ -22,12 +22,13 @@
   }
 }
 .header h1 {
-  font-family: "Raleway";
+  font-family: "Inter";
   justify-self: left;
+  font-weight: bold;
   font-size: 2rem;
+  letter-spacing: 0.2rem;
   margin: 0;
   padding: 0;
-  font-weight: 100;
   letter-spacing: 0.25rem;
   position: relative;
 }
@@ -546,6 +547,7 @@
 @media screen and (max-width: 1000px) {
   .body .mission .ctaSectionContent {
     flex-direction: column;
+    padding-bottom: 0;
   }
 }
 .body .mission .ctaSectionContent img {
@@ -746,6 +748,7 @@
   flex-direction: column;
   align-items: flex-start;
   width: min(900px, 90%);
+  padding-bottom: 8rem;
 }
 @media screen and (max-width: 1000px) {
   .marketingBody .marketingBodyContent {
@@ -817,6 +820,12 @@
 }
 .marketingBody .marketingBodyContent .donateEntry input:focus {
   outline: none;
+}
+
+.restoreStripes {
+  width: 100vw;
+  position: absolute;
+  top: max(135vh, 100%);
 }
 
 /*# sourceMappingURL=Main.module.css.map */

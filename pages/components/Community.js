@@ -15,7 +15,7 @@ function Community() {
                             <p className={styling.bodyText} ><strong>RESTORE</strong> helps you reduce your impact on the climate by reminding you to complete small, but helpful tasks, 
                             or <strong>Contributions</strong>, throughout your day, as well as showing you <strong>Contributions</strong> from around your community.</p>
                         </div>
-                        <Link href='signin' ><a className={styling.ctaButton}>Become a Member</a></Link>
+                        <Link href='/SignIn' ><a className={styling.ctaButton}>Become a Member</a></Link>
                     </div>
                     <img
                         src={'/images/together.svg'}

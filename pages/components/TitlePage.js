@@ -6,12 +6,6 @@ import {useState, useEffect} from 'react';
 function TitlePage() {
 
     const [viewportHeight, setViewportHeight] = useState(1100);
-
-    useEffect(() => {
-        window.addEventListener('resize', () => {
-            setViewportHeight(window.innerHeight);
-        })
-    });
     
     return (
         <div className={styling.titlePage}>
@@ -21,7 +15,7 @@ function TitlePage() {
                     <p className={styling.titlePrimary}>AS A COMMUNITY</p>
                 </div>
                 <p className={styling.bodyText}>Reduce your climate impact and make a difference, <strong>together</strong>.</p>
-                <Link href='./SignIn' ><a className={styling.ctaButton}>Join Now</a></Link>
+                <Link href='/SignIn' ><a className={styling.ctaButton}>Join Now</a></Link>
             </div>
             <img
                 src='/images/community.svg'

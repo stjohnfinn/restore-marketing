@@ -15,7 +15,7 @@ function Accountable() {
                             <p className={styling.bodyText}><strong>RESTORE</strong> features a <strong>Sustainability Search</strong> tool that helps you find out 
                             if your favorite companies are conducting their business sustainably.</p>
                         </div>
-                        <Link href='signin' ><a className={styling.ctaButton}>Investigate</a></Link>
+                        <Link href='/SignIn' ><a className={styling.ctaButton}>Investigate</a></Link>
                     </div>
                     <img
                         src={'/images/search.svg'}

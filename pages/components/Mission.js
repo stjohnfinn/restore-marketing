@@ -24,7 +24,7 @@ function Mission() {
             </div>
             <div className={styling.finalCTA} data-aos={'fade-up'}>
                 <h2>Together, we can reverse the damage we've done.</h2>
-                <Link href='/signin' ><a className={styling.ctaButton}>Join Now</a></Link>
+                <Link href='/SignIn' ><a className={styling.ctaButton}>Join Now</a></Link>
             </div>
         </div>
     )

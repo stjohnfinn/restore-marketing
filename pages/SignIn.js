@@ -11,7 +11,6 @@ function SignIn() {
                 <link rel="preconnect" href={"https://fonts.gstatic.com"} crossorigin></link>
                 <link href={"https://fonts.googleapis.com/css2?family=Archivo:wght@500&family=IBM+Plex+Sans&family=Inter&family=Rubik&display=swap"} rel="stylesheet"></link>
                 <link href={"https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap"} rel="stylesheet"></link>
-                <link rel='stylesheet' href='./node_modules/aos/dis/aos.css' ></link>
                 <link rel='icon' href='./images/leaf_logo.png' />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
             </Head>

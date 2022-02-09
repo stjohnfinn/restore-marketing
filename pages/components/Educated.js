@@ -14,7 +14,7 @@ function Educated() {
                             <p className={styling.bodyText}><strong>RESTORE</strong> provides users with a <strong>personally curated library</strong> of educational articles and 
                             videos regarding climate change.</p>
                         </div>
-                        <Link href='signin' ><a className={styling.ctaButton}>Explore</a></Link>
+                        <Link href='/SignIn' ><a className={styling.ctaButton}>Explore</a></Link>
                     </div>
                     <img
                         src={'/images/learning.svg'}
